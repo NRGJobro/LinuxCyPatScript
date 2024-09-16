@@ -5,6 +5,12 @@ sudo apt-get update
 sudo apt-get upgrade 
 sudo apt-get dist-upgrade
 
+# delete users
+#sudo userdel -r [USER]
+
+# remove admin perms
+#sudo deluser [USER] sudo
+
 # secure root
 sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 sudo service ssh reload
