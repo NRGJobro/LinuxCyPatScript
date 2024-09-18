@@ -11,6 +11,9 @@ sudo apt-get dist-upgrade
 # remove admin perms
 #sudo deluser [USER] sudo
 
+# add user to group
+#sudo adduser [USER] [GROUP]
+
 # secure root
 sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 sudo service ssh reload
