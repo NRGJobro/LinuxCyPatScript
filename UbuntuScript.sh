@@ -14,6 +14,9 @@ sudo apt-get dist-upgrade
 # add user to group
 #sudo adduser [USER] [GROUP]
 
+# change user password
+#sudo passwd [USER]
+
 # secure root
 sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 sudo service ssh reload
