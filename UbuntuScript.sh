@@ -21,9 +21,6 @@ sudo apt-get dist-upgrade
 sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 sudo service ssh reload
 
-# disable root access
-sudo passwd –l root
-
 # enfore password reqs
 sudo sed -i 's/PASS_MAX_DAYS.*/PASS_MAX_DAYS    90/' /etc/login.defs
 sudo sed -i 's/PASS_MIN_DAYS.*/PASS_MIN_DAYS    7/' /etc/login.defs
