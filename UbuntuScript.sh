@@ -11,9 +11,6 @@ sudo apt-get dist-upgrade
 # remove admin perms
 #sudo deluser [USER] sudo
 
-# add user to group
-#sudo adduser [USER] [GROUP]
-
 # change user password
 #sudo passwd [USER]
 
