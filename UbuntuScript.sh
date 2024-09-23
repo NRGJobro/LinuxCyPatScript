@@ -26,3 +26,4 @@ sudo ufw enable
 ##### uncomment if on mint
 # disable guest user
 #sudo sed -i 'aallow-guest=false' /etc/lightdm/lightdm.conf
+#sudo restart lightdm
