@@ -12,7 +12,6 @@ sudo apt-get dist-upgrade
 sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 sudo service ssh reload
 
-##### uncomment if on mint
 # disable guest user
 #sudo sed -i 'aallow-guest=false' /etc/lightdm/lightdm.conf
 #sudo restart lightdm
