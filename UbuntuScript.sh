@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # update system
-sudo apt-get update 
-sudo apt-get upgrade 
-sudo apt-get dist-upgrade
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
 sudo apt-get install clamtk -y	
 
 # search for prohibited files
