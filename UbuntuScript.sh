@@ -7,7 +7,7 @@ sudo apt-get dist-upgrade -y
 sudo apt-get install clamtk -y	
 
 # search for prohibited files
-#find / -name “*.{extension}” –type f
+#sudo find / -name “*.{extension}” –type f
 
 # change user password - Cyb3rPatr!0t$
 #sudo passwd [USER]
