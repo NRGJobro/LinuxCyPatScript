@@ -9,6 +9,13 @@ sudo apt-get install clamtk -y
 # search for prohibited files
 #sudo find / -name “*.{extension}” –type f
 
+echo [USER1]:Cyb3rPatr!0t$ >> pass.txt
+echo [USER2]:Cyb3rPatr!0t$ >> pass.txt
+echo [USER3]:Cyb3rPatr!0t$ >> pass.txt
+echo [USER4]:Cyb3rPatr!0t$ >> pass.txt
+echo [USER5]:Cyb3rPatr!0t$ >> pass.txt
+sudo chpasswd < pass.txt
+
 # change user password - Cyb3rPatr!0t$
 #sudo passwd [USER]
 
