@@ -10,7 +10,13 @@ sudo apt-get autoclean -y
 sudo apt-get check
 
 # install programs
-sudo apt-get install -y chkrootkit clamav rkhunter apparmor apparmor-profiles 
+sudo apt-get install -y chkrootkit clamav rkhunter apparmor apparmor-profiles ufw
+
+# if ssh is critical service
+#sudo apt-get install -y ssh openssh-server
+
+# if not
+#sudo apt-get autoremove --purge -y ssh openssh-server
 
 # delete prohibited files
 find / -name '*.mp3' -type f -delete
@@ -94,3 +100,12 @@ sudo apt-get purge irpas -y -qq
 
 # enable firewall
 sudo ufw enable
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw deny 23
+sudo ufw deny 2049
+sudo ufw deny 515
+sudo ufw deny 111
+sudo ufw logging high
+sudo ufw status verbose
