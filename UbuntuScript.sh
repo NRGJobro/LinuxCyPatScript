@@ -18,6 +18,10 @@ sudo apt-get install -y chkrootkit clamav rkhunter apparmor apparmor-profiles uf
 # if not
 #sudo apt-get autoremove --purge -y ssh openssh-server
 
+# disable guest user
+#sudo sed -i 'aallow-guest=false' /etc/lightdm/lightdm.conf
+#sudo restart lightdm
+
 # delete prohibited files
 find / -name '*.mp3' -type f -delete
 find / -name '*.mov' -type f -delete
@@ -55,10 +59,6 @@ clamscan -r -i --stdout --exclude-dir="^/sys" /
 # secure root
 sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 sudo service ssh reload
-
-# disable guest user
-#sudo sed -i 'aallow-guest=false' /etc/lightdm/lightdm.conf
-#sudo restart lightdm
 
 # enfore password reqs
 sudo sed -i 's/PASS_MAX_DAYS.*/PASS_MAX_DAYS    90/' /etc/login.defs
