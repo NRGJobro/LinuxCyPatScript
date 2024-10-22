@@ -2,13 +2,32 @@
 
 # update system
 sudo apt-get update -y
-sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
-sudo apt-get install clamtk -y	
+sudo apt-get upgrade -y
+sudo apt-get install -f -y
+sudo apt-get autoremove -y
+sudo apt-get autoclean -y
+sudo apt-get check
 
-# search for prohibited files
-#sudo find / -name “*.{extension}” –type f
+# install programs
+sudo apt-get install -y chkrootkit clamav rkhunter apparmor apparmor-profiles 
 
+# delete prohibited files
+find / -name '*.mp3' -type f -delete
+find / -name '*.mov' -type f -delete
+find / -name '*.mp4' -type f -delete
+find / -name '*.avi' -type f -delete
+find / -name '*.mpg' -type f -delete
+find / -name '*.mpeg' -type f -delete
+find / -name '*.flac' -type f -delete
+find / -name '*.m4a' -type f -delete
+find / -name '*.flv' -type f -delete
+find / -name '*.ogg' -type f -delete
+find /home -name '*.gif' -type f -delete
+find /home -name '*.png' -type f -delete
+find /home -name '*.jpg' -type f -delete
+find /home -name '*.jpeg' -type f -delete
+ 
 # change user passwords
 echo [USER1]:Cyb3rPatr!0t$ >> pass.txt
 echo [USER2]:Cyb3rPatr!0t$ >> pass.txt
@@ -16,6 +35,16 @@ echo [USER3]:Cyb3rPatr!0t$ >> pass.txt
 echo [USER4]:Cyb3rPatr!0t$ >> pass.txt
 echo [USER5]:Cyb3rPatr!0t$ >> pass.txt
 sudo chpasswd < pass.txt
+
+# scan for viruses
+sudo chkrootkit -q
+rkhunter --update
+rkhunter --propupd #Run this once at install
+rkhunter -c --enable all --disable none
+systemctl stop clamav-freshclam
+freshclam --stdout
+systemctl start clamav-freshclam
+clamscan -r -i --stdout --exclude-dir="^/sys" /
 
 # secure root
 sudo sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
