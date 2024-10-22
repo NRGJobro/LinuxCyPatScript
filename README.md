@@ -98,6 +98,8 @@ To edit files, run `gedit`, a graphical editor akin to notepad; `nano`, a simple
 1. Check the installed packages for "hacking tools," such as password crackers.
 
 1. Run other (more comprehensive) checklists. This is checklist designed to get most of the common points, but it may not catch everything.
+
+1. Check Browser settings (block redirects and popups)
  
 ## Tips
 
