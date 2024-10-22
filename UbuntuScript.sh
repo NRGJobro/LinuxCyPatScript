@@ -23,20 +23,20 @@ sudo apt-get install -y chkrootkit clamav rkhunter apparmor apparmor-profiles uf
 #sudo restart lightdm
 
 # delete prohibited files
-find / -name '*.mp3' -type f -delete
-find / -name '*.mov' -type f -delete
-find / -name '*.mp4' -type f -delete
-find / -name '*.avi' -type f -delete
-find / -name '*.mpg' -type f -delete
-find / -name '*.mpeg' -type f -delete
-find / -name '*.flac' -type f -delete
-find / -name '*.m4a' -type f -delete
-find / -name '*.flv' -type f -delete
-find / -name '*.ogg' -type f -delete
-find /home -name '*.gif' -type f -delete
-find /home -name '*.png' -type f -delete
-find /home -name '*.jpg' -type f -delete
-find /home -name '*.jpeg' -type f -delete
+sudo find / -name '*.mp3' -type f -delete
+sudo find / -name '*.mov' -type f -delete
+sudo find / -name '*.mp4' -type f -delete
+sudo find / -name '*.avi' -type f -delete
+sudo find / -name '*.mpg' -type f -delete
+sudo find / -name '*.mpeg' -type f -delete
+sudo find / -name '*.flac' -type f -delete
+sudo find / -name '*.m4a' -type f -delete
+sudo find / -name '*.flv' -type f -delete
+sudo find / -name '*.ogg' -type f -delete
+sudo find /home -name '*.gif' -type f -delete
+sudo find /home -name '*.png' -type f -delete
+sudo find /home -name '*.jpg' -type f -delete
+sudo find /home -name '*.jpeg' -type f -delete
  
 # change user passwords
 echo [USER1]:Cyb3rPatr!0t$ >> pass.txt
@@ -51,6 +51,7 @@ sudo chkrootkit -q
 rkhunter --update
 rkhunter --propupd #Run this once at install
 rkhunter -c --enable all --disable none
+
 systemctl stop clamav-freshclam
 freshclam --stdout
 systemctl start clamav-freshclam
