@@ -98,6 +98,7 @@ sudo apt-get purge pyrit -y -qq
 sudo apt-get purge rarcrack -y -qq
 sudo apt-get purge sipcrack -y -qq
 sudo apt-get purge irpas -y -qq
+sudo apt-get purge wireshark -y -qq
 
 # enable firewall
 sudo ufw enable
